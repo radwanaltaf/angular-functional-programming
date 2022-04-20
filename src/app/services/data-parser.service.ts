@@ -1,27 +1,40 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Papa } from 'ngx-papaparse';
+import { map } from 'rxjs/operators';
 
 @Injectable({
   providedIn: 'root',
 })
 export class DataParserService {
-
   constructor(private http: HttpClient, private papa: Papa) {}
-
-  parseData(filePath: string): Array<any> {
-    this.http
-      .get(filePath, { responseType: 'text' })
-      .subscribe((data) => {
-        this.papa.parse(data, {
+  readonly vaxParsedData$ = this.http
+    .get('assets/vax_malaysia.csv', { responseType: 'text' })
+    .pipe(
+      map((record) => {
+        return this.papa.parse(record, {
           // header: true,
           skipEmptyLines: true,
           complete: (result) => {
-            console.log('Parsed: ', result);
+            console.log(result);
             return result.data;
           },
         });
-      });
-      return [];
-    }
+      })
+    );
+
+  readonly vaxRegParsedData$ = this.http
+    .get('assets/vaxreg_malaysia.csv', { responseType: 'text' })
+    .pipe(
+      map((record) => {
+        return this.papa.parse(record, {
+          // header: true,
+          skipEmptyLines: true,
+          complete: (result) => {
+            console.log(result);
+            return result.data;
+          },
+        });
+      })
+    );
 }

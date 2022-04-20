@@ -1,0 +1,42 @@
+<div class="p-2">
+    <h2>All Vaccination Registration Records in Malaysia</h2>
+    <table *ngIf="allVaxRecords | async as vaxRecs" class="table table-striped">
+      <tbody>
+        <tr *ngFor="let rowItem of vaxRecs.data; let i = index">
+            <td>{{rowItem[0]}}</td>
+            <td>{{rowItem[1]}}</td>
+            <td>{{rowItem[2]}}</td>
+            <td>{{rowItem[3]}}</td>
+            <td>{{rowItem[4]}}</td>
+            <td>{{rowItem[5]}}</td>
+            <td>{{rowItem[6]}}</td>
+            <td>{{rowItem[7]}}</td>
+            <td>{{rowItem[8]}}</td>
+            <td>{{rowItem[9]}}</td>
+            <td>{{rowItem[10]}}</td>
+            <td>{{rowItem[11]}}</td>
+            <td>{{rowItem[12]}}</td>
+            <td>{{rowItem[13]}}</td>
+            <td>{{rowItem[14]}}</td>
+            <td>{{rowItem[15]}}</td>
+            <td>{{rowItem[16]}}</td>
+            <td>{{rowItem[17]}}</td>
+            <td>{{rowItem[18]}}</td>
+            <td>{{rowItem[19]}}</td>
+            <td>{{rowItem[20]}}</td>
+            <td>{{rowItem[21]}}</td>
+            <td>{{rowItem[23]}}</td>
+            <td>{{rowItem[24]}}</td>
+            <td>{{rowItem[25]}}</td>
+            <td>{{rowItem[26]}}</td>
+            <td>{{rowItem[27]}}</td>
+            <td>{{rowItem[28]}}</td>
+            <td>{{rowItem[29]}}</td>
+            <td>{{rowItem[30]}}</td>
+            <td>{{rowItem[31]}}</td>
+            <td>{{rowItem[32]}}</td>
+            <td>{{rowItem[33]}}</td>
+        </tr>
+    </table>
+  </div>
+  
