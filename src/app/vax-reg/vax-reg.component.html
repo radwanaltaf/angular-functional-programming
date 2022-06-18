@@ -1,5 +1,6 @@
 <div class="p-2">
     <h2>All Vaccination Registration Records in Malaysia</h2>
+    
     <table *ngIf="allVaxRecords | async as vaxRecs" class="table table-striped">
       <tbody>
         <tr *ngFor="let rowItem of vaxRecs.data; let i = index">

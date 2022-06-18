@@ -8,13 +8,17 @@ import { AppRoutingModule, routingComponents } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { HeaderNavComponent } from './header-nav/header-nav.component';
 import { HomeVaxComponent } from './home-vax/home-vax.component';
+import { VaxRegStateComponent } from './vax-reg-state/vax-reg-state.component';
+import { SumVaxComponent } from './sum-vax/sum-vax.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     HeaderNavComponent,
     HomeVaxComponent,
-    routingComponents
+    routingComponents,
+    VaxRegStateComponent,
+    SumVaxComponent
   ],
   imports: [
     BrowserModule,

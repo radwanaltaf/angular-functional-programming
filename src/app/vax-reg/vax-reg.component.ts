@@ -10,5 +10,4 @@ export class VaxRegComponent {
   allVaxRecords = this.dataParser.vaxRegParsedData$
   constructor(private dataParser: DataParserService) { }
 
-
 }

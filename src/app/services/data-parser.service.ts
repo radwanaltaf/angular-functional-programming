@@ -37,4 +37,49 @@ export class DataParserService {
         });
       })
     );
+
+  readonly vaxStateParsedData$ = this.http
+    .get('assets/vax_state.csv', { responseType: 'text' })
+    .pipe(
+      map((record) => {
+        return this.papa.parse(record, {
+          // header: true,
+          skipEmptyLines: true,
+          complete: (result) => {
+            console.log(result);
+            return result.data;
+          },
+        });
+      })
+    );
+
+  readonly vaxRegStateParsedData$ = this.http
+    .get('assets/vaxreg_state.csv', { responseType: 'text' })
+    .pipe(
+      map((record) => {
+        return this.papa.parse(record, {
+          // header: true,
+          skipEmptyLines: true,
+          complete: (result) => {
+            console.log(result);
+            return result.data;
+          },
+        });
+      })
+    );
+
+  readonly sumVaxMonth$ = this.http
+    .get('assets/vax_state.csv', { responseType: 'text' })
+    .pipe(
+      map((record) => {
+        return this.papa.parse(record, {
+          header: true,
+          skipEmptyLines: true,
+          complete: (result) => {
+            console.log(result);
+            return result.data;
+          },
+        });
+      })
+    );
 }
